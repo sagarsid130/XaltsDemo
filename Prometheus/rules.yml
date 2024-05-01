@@ -5,7 +5,39 @@ groups:
     expr: up{job="nodes"} == 0
     for: 1m
     labels:
-      severity: warning
+      severity: Critical
     annotations:
       title: Node {{ $labels.instance }} is down
       description: Failed to scrape {{ $labels.job }} on {{ $labels.instance }} for more than 1 minutes. Node seems down.
+
+- name: node_cpu_alerts
+  rules:
+  - alert: High CPU Usage
+    expr: 100 * (1 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])))) > 0.1
+    for: 5m
+    labels:
+      severity: Critical
+    annotations:
+      summary: "High CPU usage detected"
+      description: "CPU usage is above 80% on instance {{$labels.instance}}"
+- name: node_memory_alerts
+  rules:
+  - alert: High Memory Usage
+    expr: (node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Buffers_bytes - node_memory_Cached_bytes) / node_memory_MemTotal_bytes * 100 > 40
+    for: 5m
+    labels:
+      severity: Warning
+    annotations:
+      summary: "High Memory usage detected"
+      description: "Memory usage is above 80% on instance {{$labels.instance}}"
+
+- name: node_fs_alerts
+  rules:
+  - alert: High Disk Usage
+    expr:  (node_filesystem_size_bytes - node_filesystem_free_bytes) / node_filesystem_size_bytes * 100 > 30
+    for: 5m
+    labels:
+      severity: Warning
+    annotations:
+      summary: "High Disk usage detected"
+      description: "Disk usage is above 80% on instance {{$labels.instance}}"
