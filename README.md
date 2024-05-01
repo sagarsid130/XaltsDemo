@@ -24,3 +24,4 @@
   <li><a href="http://15.206.167.2:9090/alerts?search=">Prometheus Dashboard</li>
   <li><a href="http://15.206.167.2:9093/#/alerts">Alert Manager Dashboard</a></li>
 </ul>
+<p>P.S: Alert Manager is Disabled for Now</p>
