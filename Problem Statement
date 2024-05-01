@@ -1,0 +1,9 @@
+Problem Statement
+Create a sample infrastructure in the cloud of your choice using a hello world containerized service.
+Once the infrastructure is set up, your team wants to ensure that the application's performance
+is monitored, and appropriate alerts are configured for any anomalies.
+● Set up monitoring tools of your choice (e.g., Prometheus, Grafana) to collect and
+visualize key performance metrics for the web application.
+● Configure alerts for critical metrics (high CPU usage, high memory usage, latency spike,
+application health check status).
+● Create a simple incident response plan for handling alerts.

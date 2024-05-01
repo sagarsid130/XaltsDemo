@@ -1,0 +1,10 @@
+1) Download Node Exporter using CMD
+   wget https://github.com/prometheus/node_exporter/releases/download/v1.8.0/node_exporter-1.8.0.linux-386.tar.gz
+
+2) Extract  using CMD
+   tar -xzf node_exporter-1.8.0.linux-386.tar.gz
+
+3) Move Node Exporter to below location
+   sudo mv node_exporter /usr/local/bin/node_exporter
+
+4) Create Service file for auto start

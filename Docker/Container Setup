@@ -1,0 +1,31 @@
+1)Install Docker Using Below CMD
+  sudo yum install -y docker
+2)Enable it for Auto Start So we dont have to start it manulally everytime server reboots
+  sudo systemctl enable docker
+3)Now Use below cmds to start docker and check status
+  sudo systemctl enable docker - to save the new chages effectivley
+  sudo systemctl start docker
+  sudo systemctl status docker
+
+4)Add the ec2-user to the docker group so that you can run Docker commands without using sudo.
+  sudo usermod -a -G docker ec2-user (restart to take permssion change into effect)
+
+5) Now Create a Directory Called Webappaltx which consists our static Website files
+   mkdir webappaltx
+
+6) Create Dockerfile     
+   touch Dockerfile
+   add below lines in the config files
+   
+   FROM nginx:latest
+   COPY . /usr/share/nginx/html
+
+   Use below cmd to create docker image of webappaltx
+   docker build -t webappaltx .
+
+   Now run container using below cmd 
+   docker run -d -p 8080:81 webappaltx
+
+   you should be able to see the static website which you hosted using ngix on port 8081
+   http://43.205.115.137:8081
+  

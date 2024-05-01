@@ -1,0 +1,13 @@
+AWS Account
+EC2 Instance for hosting container services
+EC2 instance for hosting monitoring services
+Security Groups Configured properly to allow inbound and outbound traffic without blocking the required ports
+
+Setup Two EC2 instances with t2.micro free tier instance using aws
+Instance One - Xalts Demo Server (43.205.115.137)
+Configure Security group to allow port 22,8080,8081,9100,9113
+
+Instance Two - Monitoring Server (15.206.167.2)
+Configure Security group to allow port 22,3000,9090,9093,9100
+
+

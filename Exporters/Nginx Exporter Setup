@@ -1,0 +1,16 @@
+1) Download Nginx_Exporter using CMD
+   wget https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v1.1.0/nginx-prometheus-exporter_1.1.0_linux_386.tar.gz
+
+2) Extract  using CMD
+   tar -xzf nginx-prometheus-exporter_1.1.0_linux_386.tar.gz
+
+3) Move Node Exporter to below location
+   sudo mv nginx_exporter to /home/ec2-user/nginx-exporter/
+
+4) Create Service file for auto start
+
+5) To get nginx metrices add following to default.conf in nginx 
+
+location /nginx_status {
+    stub_status;
+    }

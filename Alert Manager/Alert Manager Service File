@@ -1,0 +1,14 @@
+[Unit]
+Description=Alertmanager
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=root
+Group=root
+Type=simple
+WorkingDirectory=/home/ec2-user/alertmanager/
+ExecStart=/home/ec2-user/alertmanager/alertmanager --config.file=/home/ec2-user/alertmanager/alertmanager.yml --web.external-url http://0.0.0.0:9093
+
+[Install]
+WantedBy=multi-user.target

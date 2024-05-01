@@ -1,0 +1,14 @@
+1) Download Alert Manager using CMD
+   wget https://github.com/prometheus/alertmanager/releases/download/v0.27.0/alertmanager-0.27.0.linux-amd64.tar.gz
+
+2) Extract the tar file using CMD
+   tar -xzf alertmanager-0.27.0.linux-amd64.tar.gz
+
+3) Move Alert Manager to below location
+   sudo mv alertmanger /home/ec2-user/alertmanager
+
+4) Create alertmanger.yml file
+
+5) Create Service file for auto start
+
+

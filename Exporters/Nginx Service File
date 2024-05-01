@@ -1,0 +1,12 @@
+[Unit]
+Description=Prometheus Nginx Exporter Service
+After=network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+Type=simple
+ExecStart=/home/ec2-user/nginx-exporter/nginx-prometheus-exporter --nginx.scrape-uri=http://localhost:8081/nginx_status
+
+[Install]
+WantedBy=multi-user.target
