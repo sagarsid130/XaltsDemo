@@ -13,6 +13,7 @@
       <ul> 
         <li> Node Exporter </li>
          <li> Nginx Exporter </li> 
+           <li> Blackbox Exporter </li>
       </ul>
   <li>Grafana Server</li>
   <li>Prometheus Alert Manager</li>
